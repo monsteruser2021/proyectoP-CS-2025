@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+/*NAVBAR*/
+.nav {
+  background-color: burlywood;
+  margin: 0;
+  padding: 0;
+  border-radius: 1rem;
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0.3em 0.5em 1.5em rgba(0, 0, 0, 0.6);
+}
+
+/*LOGO*/
+.logo {
+  margin: 1.5rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/*NAVBAR*/
+.nav-main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav li {
+  margin: 1.5rem;
+  font-size: 1rem;
+  list-style: none;
+}
+
+.nav li a {
+  text-decoration: none; 
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.nav li a:hover {
+  font-size: 1.1rem;
+  color: brown;
+}
+
+/*HERO*/
+.hand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  margin: 0;
+  background-color: bisque;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  display: flex; /* Para alinear las imágenes */
+  justify-content: flex-start; /* Alinear a la izquierda */
+  overflow: hidden;
+}
+
+.image-container {
+  position: relative; /* Para que el texto se superponga */
+  width: 50%;
+  height: 50%;
+  transition: transform 2.5s ease; /* Transición para el movimiento */
+}
+
+.hand img{
+  width: 60%;
+  height: 60%;
+}
+
+.text-container {
+  position: absolute; /* Posicionar el texto sobre las imágenes */
+  top: 50%;
+  left: 10%; /* Ajustar la posición a la izquierda */
+  transform: translateY(-50%); /* Centrar verticalmente */
+  opacity: 0; /* Inicialmente oculto */
+  transition: opacity 1.7s ease; /* Transición para la opacidad */
+  color: #333;
+  text-align: left; /* Alinear texto a la izquierda */
+}
+
+.text-container-h1{
+  text-transform: uppercase;
+}
+
+.text-container-p{
+  max-width: 40%;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-libros{
+  background-color: rosybrown;
+  padding: 0.3rem;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  margin-right: 1rem;
+  border: inset 0.3rem rgb(119, 89, 89);
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-entrevistas{
+  background-color: rosybrown;
+  padding: 0.3rem;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  border: inset 0.3rem rgb(119, 89, 89);
+  border-radius: 1rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.reveal {
+  opacity: 1; /* Hacer visible el texto */
+}
+
+.move-right {
+  transform: translateX(110%); /* Mover a la derecha */
+}
+
+/*ARTICULOS*/
+
+.articulos{
+  width: screen;
+  height: auto;
+  background-color: bisque;
+}
+
+.art-titulo{
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.noticias{
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 10%;
+  padding-top: 5%;
+  gap: 10%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.noticia{
+  background-color: salmon;
+  border-radius: 1rem;
+  border: solid;
+  width: 25%;
+  margin-bottom: 5%;
+}
+
+.noticia-titulo{
+  font-style: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.noticia img{
+  max-width: 90%;
+  max-block-size: 90%;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+.noticia p{
+  padding: 1rem;
+  text-align: justify;
+}
+
+.btn-noticia{
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 0.7rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  background-color: rgb(253, 190, 183);
+  border-radius: 1rem;
+}
+
+.btn-noticia a{
+  text-decoration: none;
+}
