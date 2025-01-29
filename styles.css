@@ -10,6 +10,7 @@
   background-color: burlywood;
   margin: 0;
   padding: 0;
+  height: auto;
   border-radius: 1rem;
   position: sticky;
   display: flex;
@@ -89,15 +90,17 @@
   text-align: left; /* Alinear texto a la izquierda */
 }
 
-.text-container-h1{
+.text-container-h{
   text-transform: uppercase;
 }
 
 .text-container-p{
   max-width: 40%;
-  font-size: 1.2rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  text-indent: 1rem;
+  text-align: justify;
 }
 
 .btn-libros{
@@ -154,8 +157,9 @@
   padding-right: 10%;
   padding-bottom: 10%;
   padding-top: 5%;
-  gap: 10%;
+  gap: 5%;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -163,7 +167,7 @@
   background-color: salmon;
   border-radius: 1rem;
   border: solid;
-  width: 25%;
+  width: 28%;
   margin-bottom: 5%;
 }
 
@@ -182,7 +186,7 @@
 }
 
 .noticia p{
-  padding: 1rem;
+  padding: 1.5rem;
   text-align: justify;
 }
 
@@ -199,4 +203,28 @@
 
 .btn-noticia a{
   text-decoration: none;
+}
+
+.btn-noticia a:hover{
+  font-size: 0.8rem;
+}
+
+.noticias-btn-verTodos{
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 0.7rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin: 1rem;
+  background-color: salmon;
+  border: black solid;
+  border-radius: 1rem;
+}
+
+.noticias-btn-verTodos:hover{
+  background-color: tomato;
+  font-size: 0.8rem;
 }
