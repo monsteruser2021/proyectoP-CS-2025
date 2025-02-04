@@ -6,36 +6,31 @@
     <title>Ingresar</title>
     <link rel="stylesheet" href="/login/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script defer src="/login/login.js"></script>
 </head>
-<body class="login" id="login">
-    <!--BTN BACK-->
-    <div class="btn-back">
-        <button>
-            <a href="/index.html">
-                Volver
-            </a>
-        </button>
-    </div>
+<body class="pattern login" id="login">
     <!--LOGIN-->
-    <div class="wrapper">
+    <div class="content">
         <div class="title"><span>INGRESAR</span></div>
-        <form action="#">
-            <div class="row">
+        <form id="loginForm" class="loginForm">
+            <div class="item">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" placeholder="Ingrese su usuario" required>
+                <input type="text" id="username" placeholder="Ingrese su usuario" required>
             </div>
-            <div class="row">
+            <div class="item">
                 <i class="fa-solid fa-key"></i>
-                <input type="text" placeholder="Ingrese su contrasena" required>
+                <input type="password" id="password" placeholder="Ingrese su contraseña" required>
             </div>
-            <div class="forgot">
-                <a href="#">Olvidaste tu contrasena?</a>
-            </div>
-            <div class="btn">
-                <input type="submit" value="Ingresar">
+            <div class="btn-group">
+                <button class="btn">
+                    <a href="/index.html">Iniciar sesion</a>
+                </button>
+                <button class="btn-back">
+                    <a href="/index.html">Volver al inicio</a>
+                </button>
             </div>
             <div class="signup-link">
-                No eres miembro? <a href="#">Registrate ahora!</a>
+                No eres miembro? <a href="/login/registro.html">Regístrate ahora!</a>
             </div>
         </form>
     </div>
