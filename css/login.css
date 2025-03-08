@@ -9,12 +9,12 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    height: 100%; /* Cambiado a 100% para ocupar toda la altura */
+    height: 100%;
     padding: 1rem;
 }
 
 .pattern {
-    --s: 90px; /* control the size */
+    --s: 90px;
     --c1: #ffebcd;
     --c2: #fae3c4;
     
@@ -61,7 +61,7 @@ body {
     margin-top: 3%;
     position: relative;
     display: flex;
-    align-items: center; /* Alinea verticalmente los elementos */
+    align-items: center;
 }
 
 .item i {
@@ -76,7 +76,7 @@ body {
     font-size: 1rem;
     background-color: rgb(226, 179, 179);
     box-shadow: rgba(46, 39, 39, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    margin-right: 0.5rem; /* Espaciado entre el icono y el input */
+    margin-right: 0.5rem;
 }
 
 .item label{
@@ -86,7 +86,7 @@ body {
 }
 
 .item input, .item select, .item textarea {
-    flex: 1; /* Asegura que el input ocupe el resto del espacio */
+    flex: 1;
     outline: none;
     padding: 0.5rem;
     border-radius: 0.5rem;
@@ -98,18 +98,18 @@ body {
 
 .item .checkbox {
     display: flex;
-    justify-content: center; /* Centra las opciones de checkbox horizontalmente */
-    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: center;
+    align-items: center;
     box-shadow: none;
 }
 
 .item .checkbox label {
-    margin-right: 0.5rem; /* Espaciado entre el checkbox y el label */
+    margin-right: 0.5rem;
 }
 
 .select {
-    display: flex; /* Cambiado a flex para alinear los elementos en fila */
-    align-items: center; /* Alinea verticalmente los elementos */
+    display: flex;
+    align-items: center;
     margin-top: 1rem;
 }
 
@@ -119,43 +119,33 @@ body {
 }
 
 .select div:last-child {
-    margin-right: 0; /* Elimina el margen derecho del último elemento */
+    margin-right: 0;
 }
 
 .item textarea {
-    height: auto; /* Mantener auto para que se ajuste al contenido */
+    height: auto;
 }
-
 
 /* Botones */
 
 .btn-group {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 5%;
-    margin-left: 25%;
-    margin-right: 25%;
 }
 
-.btn-group .btn,
-.btn-group .btn-back {
+.btn-group .btn {
     font-size: 1rem;
     padding: 0.15rem 1rem;
     background-color: rgb(226, 179, 179);
     box-shadow: rgba(46, 39, 39, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     border-radius: 0.5rem;
-    width: 45%;
     text-align: center;
     text-decoration: none;
+    width: 50%;
 }
 
-.btn-group a {
-    color: black;
-    text-decoration: none;
-}
-
-.btn-group .btn:hover,
-.btn-group .btn-back:hover {
+.btn-group .btn:hover {
     box-shadow: rgb(0, 0, 0) -3px 2px 5px 0px inset, rgba(0, 0, 0, 0.5) -3px 3px 6px 1px inset;
     background-color: rgb(211, 176, 176);
 }
@@ -178,10 +168,10 @@ body {
 }
 
 .item label {
-    font-size: 0.9rem; /* Tamaño de fuente ajustado para etiquetas */
-    margin-bottom: 0.5rem; /* Espaciado entre etiqueta y elemento */
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
 }
 
 .item div {
-    margin-top: 0.5rem; /* Espaciado entre elementos dentro de la fila */
+    margin-top: 0.5rem;
 }

@@ -79,12 +79,9 @@
                 <button type="submit" class="btn" id="submitBtn">
                     Registrarse
                 </button>
-                <button class="btn-back" type="button" onclick="window.location.href='../index.html'">
-                    Volver al inicio
-                </button>
             </div>
             <div class="signup-link">
-                Ya eres miembro? <a href="login.html">Inicia sesión ahora!</a>
+                Ya eres miembro? <a href="login.php">Inicia sesión ahora!</a>
             </div>
         </form>
     </div>
