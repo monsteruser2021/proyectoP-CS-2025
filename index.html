@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vital Mind</title>
-    <link rel="stylesheet" href="/styles.css">
-    <script src="/main.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <!-- FontAwesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="main.js" defer></script>
 </head>
 <body class="pattern">
+    <?php
+    session_start();
+    ?>
     <!--NAVBAR-->
     <nav class="nav">
         <a href="" class="logo">
@@ -15,14 +20,32 @@
         </a>
         <ul class="nav-main">
             <li><a href="#">Inicio</a></li>
-            <li><a href="/login/login.html">Ingresar</a></li>
-            <li><a href="#">Articulos</a></li>
-            <li><a href="#">Recursos</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#articulos">Artículos</a></li>
+            <li><a href="#recursos">Recursos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="graph.html">Gráfica</a></li>
+            <li><a href="faq.html">Preguntas Frecuentes</a></li>
+            <li class="user-menu">
+                <a href="#" id="user-icon">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+                <ul id="user-dropdown" style="display: none;">
+                    <?php if (isset($_SESSION['user'])) { ?>
+                        <li><?php echo $_SESSION['user']; ?></li>
+                        <li><a href="logout.php">Cerrar sesión</a></li>
+                    <?php } else { ?>
+                        <script>
+                            document.getElementById("user-icon").onclick = function() {
+                                window.location.href = "login/registro.html";
+                            }
+                        </script>
+                    <?php } ?>
+                </ul>
+            </li>
         </ul>
     </nav>
     <!--HEADER-->
-    <header>
+    <header class="header">
       <div class="date-container">
           <div id="currentDateHeader"></div>
           <div id="lastModifiedHeader"></div>
@@ -30,13 +53,13 @@
     </header>
     <!--LOGIN-->
     <div>
-      <a href="/login/login.html"></a>
+      <a href="login/login.html"></a>
     </div>
     <!--HERO-->
     <div class="hand">
         <div class="container">
             <div class="image-container right">
-                <img src="/images/hand.png" alt="Mano">
+                <img src="images/hand.png" alt="Mano">
             </div>
             <div class="text-container">
               <h1 class="text-container-h">Vital Mind</h1>
@@ -54,7 +77,7 @@
         </div>
     </div>
     <!--ARTICULOS-->
-    <div class="articulos">
+    <div class="articulos" id="articulos">
       <h2 class="titulo">
         ARTICULOS DESTACADOS DE LA SEMANA
       </h2>
@@ -64,7 +87,7 @@
             El azúcar, un dulce engaño?
           </h3>
           <figure>
-            <img src="/images/noticia1.jpeg" alt="noticia1">
+            <img src="images/noticia1.jpeg" alt="noticia1">
             <figcaption>El azúcar, un dulce engaño?</figcaption>
           </figure>
           <p>La comida puede tener muchos efectos sobre tu estado de ánimo y tus emociones. Cuando tienes hambre y quieres comer, puedes estar malhumorado, disgustado o incluso enfadado. Cuando has comido algo delicioso, puedes sentirte eufórico y eufórico. Los alimentos que ingieres también pueden tener consecuencias a largo plazo para tu salud. En concreto, comer demasiado azúcar puede aumentar el riesgo de sufrir trastornos del estado de ánimo, incluida la depresión.</p>
@@ -77,7 +100,7 @@
             Trauma y ansiedad relacionados
           </h3>
           <figure>
-            <img src="/images/noticia2.jpeg" alt="noticia2">
+            <img src="images/noticia2.jpeg" alt="noticia2">
             <figcaption>Trauma y ansiedad relacionados</figcaption>
           </figure>
           <p>El trauma se produce cuando uno es parte o testigo de una experiencia negativa que desborda su respuesta al estrés y su capacidad psicológica para hacerle frente. La guerra, las catástrofes naturales, los malos tratos, presenciar la muerte y los accidentes que ponen en peligro la vida son ejemplos de situaciones que pueden causar un trauma. Después de un acontecimiento traumático, es natural pasar por una serie de emociones, como ira, culpa, tristeza y confusión.</p>
@@ -90,7 +113,7 @@
             Amnesia disociativa
           </h3>
           <figure>
-            <img src="/images/noticia3.jpeg" alt="noticia3">
+            <img src="images/noticia3.jpeg" alt="noticia3">
             <figcaption>Amnesia disociativa</figcaption>
           </figure>
           <p>La amnesia disociativa se produce cuando la mente bloquea información importante sobre uno mismo, provocando «lagunas» en la memoria. Una de las razones más comunes por las que la mente bloquea cosas es para protegerse de experiencias desagradables, angustiosas o traumáticas. No es lo mismo que simplemente olvidar algo. En la mayoría de los casos, conservas los recuerdos pero no puedes acceder a ellos.</p>
@@ -104,7 +127,7 @@
       </div>
     </div>
     <!--RECURSOS-->
-    <div class="recursos">
+    <div class="recursos" id="recursos">
       <h2 class="titulo">RECURSOS</h2>
       <div class="noticias">
         <div class="noticia">
@@ -112,7 +135,7 @@
             Imagenes
           </h3>
           <figure>
-            <img src="/images/recurso1.jpeg" alt="recurso1">
+            <img src="images/recurso1.jpeg" alt="recurso1">
             <figcaption>Imagenes</figcaption>
           </figure>
           <p>Explora un universo visual infinito, donde cada imagen es una puerta hacia la serenidad. Nuestra galería te invita a un viaje introspectivo, ofreciéndote una variedad de estilos y temáticas que resonarán con tu alma. Desde paisajes oníricos hasta retratos emotivos, encontrarás la inspiración que necesitas para nutrir tu mente y encontrar tu centro.</p>
@@ -138,7 +161,7 @@
             Libros
           </h3>
           <figure>
-            <img src="/images/recurso2.jpg" alt="recurso2">
+            <img src="images/recurso2.jpg" alt="recurso2">
             <figcaption>Libros</figcaption>
           </figure>
           <p>Descubre un mundo de posibilidades con nuestra selección de libros cuidadosamente curada. Desde clásicos de la psicología hasta las últimas novedades en bienestar, encontrarás la lectura perfecta para alimentar tu mente y espíritu.</p>
@@ -152,7 +175,7 @@
       </div>
     </div>
     <!--FOOTER-->
-    <footer>
+    <footer id="contacto">
         <div class="footer-column">
             <h3>About Us</h3>
             <ul>
@@ -182,5 +205,30 @@
             <div id="browserInfo"></div>
         </div>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var userIcon = document.getElementById("user-icon");
+            var userDropdown = document.getElementById("user-dropdown");
+
+            userIcon.addEventListener("click", function(event) {
+                event.preventDefault();
+                if ("<?php echo isset($_SESSION['user']); ?>") {
+                    if (userDropdown.style.display === "none") {
+                        userDropdown.style.display = "block";
+                    } else {
+                        userDropdown.style.display = "none";
+                    }
+                } else {
+                    window.location.href = "login/registro.html";
+                }
+            });
+
+            document.addEventListener("click", function(event) {
+                if (!userIcon.contains(event.target) && !userDropdown.contains(event.target)) {
+                    userDropdown.style.display = "none";
+                }
+            });
+        });
+    </script>
 </body>
 </html>

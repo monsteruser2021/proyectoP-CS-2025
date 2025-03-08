@@ -4,42 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse</title>
-    <link rel="stylesheet" href="/login/login.css">
+    <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <script defer src="/login/registro.js"></script>
+    <script defer src="registro.js"></script>
 </head>
 <body class="pattern login" id="register">
     <!--REGISTER-->
     <div class="content">
         <div class="title"><span>REGISTRARSE</span></div>
-        <form id="registerForm" class="registerForm">
+        <form id="registerForm" class="registerForm" method="POST" action="create_user.php">
             <div class="item">
                 <i class="fa-solid fa-user icono"></i>
-                <input type="text" id="username" placeholder="Ingrese su usuario" required>
+                <input type="text" name="nombre" placeholder="Ingrese su nombre" required>
             </div>
             <div class="item">
                 <i class="fa-solid fa-signature"></i>
-                <input type="text" id="fullname" placeholder="Ingrese su nombre completo" required>
-            </div>
-            <div class="item">
-                <i class="fa-solid fa-key"></i>
-                <input type="password" id="password" placeholder="Ingrese su contraseña" required>
-            </div>
-            <div class="item">
-                <i class="fa-solid fa-key"></i>
-                <input type="password" id="confirm_password" placeholder="Confirme su contraseña" required>
+                <input type="text" name="fullname" placeholder="Ingrese su nombre completo" required>
             </div>
             <div class="item">
                 <i class="fa-solid fa-envelope"></i>
-                <input type="email" id="email" placeholder="Ingrese su email" required>
+                <input type="email" name="email" placeholder="Ingrese su email" required>
+            </div>
+            <div class="item">
+                <i class="fa-solid fa-key"></i>
+                <input type="password" name="password" placeholder="Ingrese su contraseña" required>
+            </div>
+            <div class="item">
+                <i class="fa-solid fa-key"></i>
+                <input type="password" name="confirm_password" placeholder="Confirme su contraseña" required>
             </div>
             <div class="item">
                 <label for="birthDate">Cumpleaños:</label>
-                <input type="date" id="dob" placeholder="Ingrese su fecha de nacimiento" required>
+                <input type="date" name="dob" placeholder="Ingrese su fecha de nacimiento" required>
             </div>
             <div class="item">
                 <label for="preferences">Preferencias:</label>
-                <select id="preferences" required>
+                <select name="preferences" required>
                     <option value="" disabled selected>Seleccione una opción</option>
                     <option value="salud">Salud</option>
                     <option value="bienestar">Bienestar</option>
@@ -49,15 +49,15 @@
             <div class="item">
                 <label>¿Cuáles son tus hobbies?</label>
                 <div>
-                    <input type="checkbox" id="hobby1" name="hobbies" value="lectura" class="checkbox">
+                    <input type="checkbox" id="hobby1" name="hobbies[]" value="lectura" class="checkbox">
                     <label for="hobby1">Lectura</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="hobby2" name="hobbies" value="deporte" class="checkbox">
+                    <input type="checkbox" id="hobby2" name="hobbies[]" value="deporte" class="checkbox">
                     <label for="hobby2">Deporte</label>
                 </div>
                 <div>
-                    <input type="checkbox" id="hobby3" name="hobbies" value="musica" class="checkbox">
+                    <input type="checkbox" id="hobby3" name="hobbies[]" value="musica" class="checkbox">
                     <label for="hobby3">Música</label>
                 </div>
             </div>
@@ -78,18 +78,18 @@
             </div>
             <div class="item">
                 <i class="fa-solid fa-pen"></i>
-                <textarea id="bio" placeholder="Ingrese una breve biografía (opcional)"></textarea>
+                <textarea name="bio" placeholder="Ingrese una breve biografía (opcional)"></textarea>
             </div>
             <div class="btn-group">
-                <button type="button" class="btn" id="submitBtn">
+                <button type="submit" class="btn" id="submitBtn">
                     Registrarse
                 </button>
-                <button class="btn-back">
-                    <a href="/index.html">Volver al inicio</a>
+                <button class="btn-back" type="button" onclick="window.location.href='../index.html'">
+                    Volver al inicio
                 </button>
             </div>
             <div class="signup-link">
-                Ya eres miembro? <a href="/login/login.html">Inicia sesión ahora!</a>
+                Ya eres miembro? <a href="login.html">Inicia sesión ahora!</a>
             </div>
         </form>
     </div>
