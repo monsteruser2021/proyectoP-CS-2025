@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <script defer src="registro.js"></script>
 </head>
@@ -12,22 +12,18 @@
     <!--REGISTER-->
     <div class="content">
         <div class="title"><span>REGISTRARSE</span></div>
-        <form id="registerForm" class="registerForm" method="POST" action="create_user.php">
-            <div class="item">
-                <i class="fa-solid fa-user icono"></i>
-                <input type="text" name="nombre" placeholder="Ingrese su nombre" required>
-            </div>
+        <form id="registerForm" class="registerForm" method="POST" action="inicioSesion/registrarse.php">
             <div class="item">
                 <i class="fa-solid fa-signature"></i>
-                <input type="text" name="fullname" placeholder="Ingrese su nombre completo" required>
+                <input type="text" id="username" name="username" placeholder="Ingrese su usuario" required>
             </div>
             <div class="item">
                 <i class="fa-solid fa-envelope"></i>
-                <input type="email" name="email" placeholder="Ingrese su email" required>
+                <input type="email" id="email" name="email" placeholder="Ingrese su email" required>
             </div>
             <div class="item">
                 <i class="fa-solid fa-key"></i>
-                <input type="password" name="password" placeholder="Ingrese su contraseña" required>
+                <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
             </div>
             <div class="item">
                 <i class="fa-solid fa-key"></i>
@@ -36,15 +32,6 @@
             <div class="item">
                 <label for="birthDate">Cumpleaños:</label>
                 <input type="date" name="dob" placeholder="Ingrese su fecha de nacimiento" required>
-            </div>
-            <div class="item">
-                <label for="preferences">Preferencias:</label>
-                <select name="preferences" required>
-                    <option value="" disabled selected>Seleccione una opción</option>
-                    <option value="salud">Salud</option>
-                    <option value="bienestar">Bienestar</option>
-                    <option value="nutricion">Nutrición</option>
-                </select>
             </div>
             <div class="item">
                 <label>¿Cuáles son tus hobbies?</label>
@@ -75,6 +62,14 @@
                     <input type="radio" id="gender_other" name="gender" value="otro" required>
                     <label for="gender_other">Otro</label>
                 </div>
+            </div>
+            <div class="item">
+                <label for="role_id">Rol:</label>
+                <select id="role_id" name="role_id" required>
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="1">Admin</option>
+                    <option value="2">Usuario</option>
+                </select>
             </div>
             <div class="item">
                 <i class="fa-solid fa-pen"></i>

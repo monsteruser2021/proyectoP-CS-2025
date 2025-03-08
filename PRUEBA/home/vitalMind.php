@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+// Verifica si el usuario está autenticado
+if (!isset($_SESSION['username']) || $_SESSION['role_id'] != 2) { // Suponiendo que el rol de usuario es 2
+    header("Location: ../login.php");
+    exit();
+}
+
+// Conectar a la base de datos
+require_once '../config/connection.php';
+$connection = new Connection();
+$pdo = $connection->connect();
+
+// Obtener la lista de usuarios
+$sql = "SELECT id, username FROM usuarios";
+$stmt = $pdo->query($sql);
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,16 +43,7 @@
             <li><a href="#articulos">Artículos</a></li>
             <li><a href="#recursos">Recursos</a></li>
             <li><a href="#contacto">Contacto</a></li>
-            <li><a href="graph.html">Gráfica</a></li>
-            <li><a href="faq.html">Preguntas Frecuentes</a></li>
         </ul>
-        <div class="user-session">
-            <?php if (isset($_SESSION['user'])) { ?>
-                <span>Sesión activa: <?php echo $_SESSION['user']; ?></span>
-            <?php } else { ?>
-                <a href="login/login.html" class="btn">Ingresar</a>
-            <?php } ?>
-        </div>
     </nav>
     <!--HEADER-->
     <header class="header">
@@ -45,7 +56,7 @@
     <div class="hand">
         <div class="container">
             <div class="image-container right">
-                <img src="images/hand.png" alt="Mano">
+                <img src="PRUEBA/images/hand.png" alt="Mano">
             </div>
             <div class="text-container">
               <h1 class="text-container-h">Vital Mind</h1>

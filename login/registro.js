@@ -30,3 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitBtn = document.getElementById('submitBtn');
   submitBtn.addEventListener('click', handleSubmit);
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('error')) {
+      alert("Ocurrió un error al registrar el usuario. Por favor, inténtelo de nuevo.");
+  }
+});

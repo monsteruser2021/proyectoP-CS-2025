@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: 100%; /* Cambiado a 100% para ocupar toda la altura */
+    padding: 1rem;
+}
+
+.pattern {
+    --s: 90px; /* control the size */
+    --c1: #ffebcd;
+    --c2: #fae3c4;
+    
+    --_s: calc(2 * var(--s)) calc(2 * var(--s));
+    --_g: 35.36% 35.36% at;
+    --_c: #0000 66%, var(--c2) 68% 70%, #0000 72%;
+    background:
+        radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s) / var(--_s),
+        radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s) / var(--_s),
+        radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0 / var(--_s),
+        radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0 / var(--_s),
+        repeating-conic-gradient(var(--c1) 0 25%, #0000 0 50%) 0 0 / var(--_s),
+        radial-gradient(var(--_c)) 0 calc(var(--s) / 2) / var(--s) var(--s) var(--c1);
+}
+
+/* LOGIN & REGISTER */
+
+.title {
+    padding: 1rem;
+    background-color: rgb(226, 179, 179);
+    border-radius: 0.5rem;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    text-transform: uppercase;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 40%;
+    background-color: rgb(255, 243, 223);
+    border-radius: 0.5rem;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    padding: 1.5rem;
+}
+
+.registerForm, .loginForm {
+    width: auto;
+}
+
+.item {
+    margin-top: 3%;
+    position: relative;
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
+}
+
+.item i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5%;
+    max-height: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: black;
+    font-size: 1rem;
+    background-color: rgb(226, 179, 179);
+    box-shadow: rgba(46, 39, 39, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    margin-right: 0.5rem; /* Espaciado entre el icono y el input */
+}
+
+.item label{
+    font-weight: bold;
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+.item input, .item select, .item textarea {
+    flex: 1; /* Asegura que el input ocupe el resto del espacio */
+    outline: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: rgb(0, 0, 0) -3px 2px 5px 0px inset, rgba(0, 0, 0, 0.5) -3px 3px 6px 1px inset;
+    font-size: 0.9rem;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.item .checkbox {
+    display: flex;
+    justify-content: center; /* Centra las opciones de checkbox horizontalmente */
+    align-items: center; /* Alinea verticalmente los elementos */
+    box-shadow: none;
+}
+
+.item .checkbox label {
+    margin-right: 0.5rem; /* Espaciado entre el checkbox y el label */
+}
+
+.select {
+    display: flex; /* Cambiado a flex para alinear los elementos en fila */
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin-top: 1rem;
+}
+
+.select div {
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+}
+
+.select div:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento */
+}
+
+.item textarea {
+    height: auto; /* Mantener auto para que se ajuste al contenido */
+}
+
+
+/* Botones */
+
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.btn-group .btn,
+.btn-group .btn-back {
+    font-size: 1rem;
+    padding: 0.15rem 1rem;
+    background-color: rgb(226, 179, 179);
+    box-shadow: rgba(46, 39, 39, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 0.5rem;
+    width: 45%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-group a {
+    color: black;
+    text-decoration: none;
+}
+
+.btn-group .btn:hover,
+.btn-group .btn-back:hover {
+    box-shadow: rgb(0, 0, 0) -3px 2px 5px 0px inset, rgba(0, 0, 0, 0.5) -3px 3px 6px 1px inset;
+    background-color: rgb(211, 176, 176);
+}
+
+.content form .signup-link {
+    margin-top: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.content form .signup-link a {
+    text-decoration: none;
+    color: brown;
+}
+
+.content form .signup-link a:hover {
+    text-decoration: underline;
+    color: darkred;
+}
+
+.item label {
+    font-size: 0.9rem; /* Tamaño de fuente ajustado para etiquetas */
+    margin-bottom: 0.5rem; /* Espaciado entre etiqueta y elemento */
+}
+
+.item div {
+    margin-top: 0.5rem; /* Espaciado entre elementos dentro de la fila */
+}
