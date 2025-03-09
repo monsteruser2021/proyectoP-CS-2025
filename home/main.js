@@ -16,14 +16,13 @@ function displayDates() {
     const currentDate = new Date();
     document.getElementById('currentDateHeader').textContent = `Fecha actual: ${currentDate.toLocaleDateString()}`;
     
-    fetch(document.URL, { method: 'HEAD' })
-        .then(response => {
-            const lastModified = new Date(response.headers.get('Last-Modified'));
-            document.getElementById('lastModifiedHeader').textContent = `Última modificación: ${lastModified.toLocaleDateString()}`;
-        })
-        .catch(error => {
-            console.error('Error obteniendo la fecha de la última modificación:', error);
-        });
+    // Utilizar la fecha de última modificación pasada desde PHP
+    const lastModifiedDate = new Date(lastModifiedDate);
+    if (!isNaN(lastModifiedDate.getTime())) {
+        document.getElementById('lastModifiedHeader').textContent = `Última modificación: ${lastModifiedDate.toLocaleDateString()}`;
+    } else {
+        document.getElementById('lastModifiedHeader').textContent = 'Última modificación: No disponible';
+    }
 }
 
 function displayBrowserInfo() {

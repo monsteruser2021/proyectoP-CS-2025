@@ -34,7 +34,7 @@
             </div>
             <div class="item">
                 <label for="birthdate">Fecha de Nacimiento:</label>
-                <input type="text" id="birthdate" name="birthdate" placeholder="Ingrese su fecha de nacimiento" required>
+                <input type="text" id="birthdate" name="dob" placeholder="Ingrese su fecha de nacimiento" required>
             </div>
             <div class="item">
                 <label>¿Cuáles son tus hobbies?</label>

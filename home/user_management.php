@@ -86,8 +86,10 @@ $users = $pdo->query("SELECT * FROM usuarios")->fetchAll(PDO::FETCH_ASSOC);
     <div class="sidebar">
         <h2>Dashboard</h2>
         <a href="dashboard.php">Inicio</a>
-        <a href="user_management.php">Mantenimiento de Usuarios</a>
+        <a href="user_management.php" class="active">Mantenimiento de Usuarios</a>
         <a href="general_query.php">Consulta General</a>
+        <a href="activity_report.php">Reporte de Actividades</a>
+        <a href="generate_report.php">Generar Reportes de Fallas</a>
         <a href="../InicioSesion/CerrarSesion.php">Cerrar sesión</a>
     </div>
     <div class="main">

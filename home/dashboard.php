@@ -53,27 +53,26 @@ echo "<script>console.log('User Count: " . $userCount . "');</script>";
     <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="../jqplot/src/jquery.jqplot.css">
     <style>
-        /* Estilos adicionales para centrar la gráfica */
         .chart-container {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             height: 400px;
-            width: 100%; /* Ajustar el ancho del contenedor al 100% */
-            max-width: 600px; /* Limitar el ancho máximo del contenedor */
-            margin: 0 auto; /* Centrar la gráfica horizontalmente */
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
     <div class="sidebar">
         <h2>Dashboard</h2>
-        <a href="#">Inicio</a>
+        <a href="dashboard.php" class="active">Inicio</a>
         <a href="user_management.php">Mantenimiento de Usuarios</a>
         <a href="general_query.php">Consulta General</a>
         <a href="activity_report.php">Reporte de Actividades</a>
-        <a href="generate_report.php">Generar Reporte</a>
+        <a href="generate_report.php">Generar Reportes de Fallas</a>
         <a href="../InicioSesion/CerrarSesion.php">Cerrar sesión</a>
     </div>
     <div class="main">
@@ -87,7 +86,6 @@ echo "<script>console.log('User Count: " . $userCount . "');</script>";
             <div id="chart2" class="chart-container"></div>
         </div>
     </div>
-    <!-- Incluir jQuery y jqPlot JS -->
     <script src="../jqplot/src/jquery.min.js"></script>
     <script src="../jqplot/src/jquery.jqplot.js"></script>
     <script src="../jqplot/src/plugins/jqplot.pieRenderer.js"></script>
@@ -102,7 +100,7 @@ echo "<script>console.log('User Count: " . $userCount . "');</script>";
             ['Usuarios', <?php echo $userCount; ?>]
         ];
         
-        console.log(userData); // Para depuración: imprimir los datos en la consola del navegador
+        console.log(userData);
 
         $.jqplot('chart1', [userData], {
             seriesDefaults: {
@@ -121,12 +119,12 @@ echo "<script>console.log('User Count: " . $userCount . "');</script>";
                 placement: 'outsideGrid' 
             },
             grid: {
-                drawGridLines: false,        // Líneas de la cuadrícula
-                gridLineColor: '#FFFFFF',    // Color de las líneas de la cuadrícula
-                background: '#FFFFFF',       // Fondo de la cuadrícula
-                borderColor: '#CCCCCC',      // Color del borde de la cuadrícula
-                borderWidth: 0.5,            // Ancho del borde de la cuadrícula
-                shadow: false                // Sombra
+                drawGridLines: false,
+                gridLineColor: '#FFFFFF',
+                background: '#FFFFFF',
+                borderColor: '#CCCCCC',
+                borderWidth: 0.5,
+                shadow: false
             },
             highlighter: {
                 show: true,
@@ -146,7 +144,7 @@ echo "<script>console.log('User Count: " . $userCount . "');</script>";
             ?>
         ];
         
-        console.log(activityData); // Para depuración: imprimir los datos en la consola del navegador
+        console.log(activityData);
 
         $.jqplot('chart2', [activityData], {
             seriesDefaults: {
@@ -165,12 +163,12 @@ echo "<script>console.log('User Count: " . $userCount . "');</script>";
                 placement: 'outsideGrid' 
             },
             grid: {
-                drawGridLines: false,        // Líneas de la cuadrícula
-                gridLineColor: '#FFFFFF',    // Color de las líneas de la cuadrícula
-                background: '#FFFFFF',       // Fondo de la cuadrícula
-                borderColor: '#CCCCCC',      // Color del borde de la cuadrícula
-                borderWidth: 0.5,            // Ancho del borde de la cuadrícula
-                shadow: false                // Sombra
+                drawGridLines: false,
+                gridLineColor: '#FFFFFF',
+                background: '#FFFFFF',
+                borderColor: '#CCCCCC',
+                borderWidth: 0.5,
+                shadow: false
             },
             highlighter: {
                 show: true,

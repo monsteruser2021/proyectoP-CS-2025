@@ -16,6 +16,9 @@ $pdo = $connection->connect();
 $sql = "SELECT id, username FROM usuarios";
 $stmt = $pdo->query($sql);
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Obtener la fecha de la última modificación del archivo actual
+$lastModified = date("Y-m-d H:i:s", filemtime(__FILE__));
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +30,10 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="styles.css">
     <!-- FontAwesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script>
+        // Pasar la fecha de última modificación de PHP a JavaScript
+        const lastModifiedDate = '<?php echo $lastModified; ?>';
+    </script>
     <script src="main.js" defer></script>
 </head>
 <body class="pattern">
@@ -203,11 +210,6 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div id="browserInfo"></div>
         </div>
     </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            displayDates();
-            displayBrowserInfo();
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>

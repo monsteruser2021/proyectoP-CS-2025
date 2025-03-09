@@ -1,3 +1,44 @@
+<?php
+session_start();
+require_once 'config/connection.php';
+
+$connection = new Connection();
+$pdo = $connection->connect();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $sql = "SELECT * FROM usuarios WHERE username = :username";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':username', $username);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['role_id'] = $user['role_id'];
+        $_SESSION['user_id'] = $user['id'];
+
+        // Registrar la actividad de inicio de sesión
+        $sql = "INSERT INTO user_activities (user_id, activity_type, description) VALUES (:user_id, 'login', 'El usuario ha iniciado sesión.')";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':user_id', $user['id']);
+        $stmt->execute();
+
+        // Redirigir según el rol del usuario
+        if ($user['role_id'] == 1) {
+            header('Location: home/dashboard.php'); // Admin
+        } else {
+            header('Location: home/vitalMind.php'); // Usuario regular
+        }
+        exit;
+    } else {
+        echo "Credenciales incorrectas.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +84,7 @@
     <!--LOGIN-->
     <div class="content">
         <div class="title"><span>INGRESAR</span></div>
-        <form id="loginForm" class="loginForm" action="inicioSesion/inicioSesion.php" method="POST">
+        <form id="loginForm" class="loginForm" action="login.php" method="POST">
             <div class="item">
                 <i class="fa-solid fa-user"></i>
                 <input type="text" id="username" name="username" placeholder="Ingrese su usuario" required>
@@ -65,15 +106,15 @@
             <div id="accordion" class="faq">
                 <h3>¿Debo estar registrado para poder ingresar?</h3>
                 <div>
-                    <p>Si, solo tendras acceso si te registras primero.</p>
+                    <p>Si, solo tendrás acceso si te registras primero.</p>
                 </div>
-                <h3>¿A quién esta dirigido la página?</h3>
+                <h3>¿A quién está dirigido la página?</h3>
                 <div>
                     <p>A todas aquellas personas que quieran aprender sobre la salud mental.</p>
                 </div>
                 <h3>¿Cómo apoyar la página?</h3>
                 <div>
-                    <p>Comparte nuestra página en tus redes sociales!</p>
+                    <p>¡Comparte nuestra página en tus redes sociales!</p>
                 </div>
             </div>
         </div>
