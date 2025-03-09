@@ -6,6 +6,9 @@
     <title>Registrarse</title>
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script defer src="registro.js"></script>
 </head>
 <body class="pattern login" id="register">
@@ -30,8 +33,8 @@
                 <input type="password" name="confirm_password" placeholder="Confirme su contraseña" required>
             </div>
             <div class="item">
-                <label for="birthDate">Cumpleaños:</label>
-                <input type="date" name="dob" placeholder="Ingrese su fecha de nacimiento" required>
+                <label for="birthdate">Fecha de Nacimiento:</label>
+                <input type="text" id="birthdate" name="birthdate" placeholder="Ingrese su fecha de nacimiento" required>
             </div>
             <div class="item">
                 <label>¿Cuáles son tus hobbies?</label>
@@ -85,5 +88,13 @@
             </div>
         </form>
     </div>
+
+    <script>
+        $(function() {
+            $("#birthdate").datepicker({
+                dateFormat: "yy-mm-dd"
+            });
+        });
+    </script>
 </body>
 </html>
